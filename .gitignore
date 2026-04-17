@@ -1,3 +1,11 @@
-.ipynb_checkpoints/
+data/marketing_AB.csv
 __pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+.venv/
+env/
 .DS_Store
+Thumbs.db
+.vscode/
+.idea/

@@ -166,6 +166,12 @@ jupyter notebook "marketing ab test.ipynb"
 
 ---
 
+## 📂 Data Source
+
+> **Marketing A/B Testing Dataset** from [Kaggle](https://www.kaggle.com/faviovaz/marketing-ab-testing). Fully anonymized (numeric user IDs only).
+
+---
+
 ## 👤 Author
 
 **Yingru Ma** · Economics Background · Targeting DS / PM Roles
