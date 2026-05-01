@@ -147,7 +147,7 @@ Pre-launch Power Analysis → SRM Check → Primary z-Test
 ## 🗂 Project Structure
 
 ```
-marketing-ab-test/
+ab-testing-roi-decision/
 ├── marketing ab test.ipynb     # Full analysis notebook (21 cells)
 ├── README.md                   # ← You are here
 ├── assets/
@@ -166,8 +166,8 @@ marketing-ab-test/
 
 ```bash
 # Clone
-git clone https://github.com/yingruma1999-hub/marketing-ab-test.git
-cd marketing-ab-test
+git clone https://github.com/yingruma1999-hub/ab-testing-roi-decision.git
+cd ab-testing-roi-decision
 
 # Install dependencies
 pip install pandas numpy matplotlib seaborn scipy statsmodels
