@@ -1,5 +1,5 @@
-<h1 align="center">📊 Marketing A/B Test Analysis</h1>
-<h3 align="center">From Statistical Significance to Business Profitability</h3>
+<h1 align="center">📊 Marketing Experimentation & ROI Decision</h1>
+<h3 align="center">From A/B Testing to Business Go/No-Go Decision</h3>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.10+-blue?logo=python&logoColor=white" />
@@ -10,25 +10,69 @@
 
 ---
 
-## 🎯 Executive Summary
+## 🚀 Business Impact (TL;DR)
 
-| | |
-|---|---|
-| **The Experiment** | 588,101 users randomly assigned to see **ads** (96%) or **PSA placeholders** (4%) in an online advertising campaign. |
-| **Statistical Result** | ✅ Ads increased conversion by **+0.77 pp** (p < 0.0001), exceeding the pre-registered MDE of 0.5 pp. |
-| **The Twist** | ⚠️ Despite statistical significance, the campaign is **economically negative** — ad-serving costs (€1.24/user) nearly wipe out the incremental revenue (€1.28/user). |
-| **Recommendation** | **NO-GO for full rollout** at current CPM. Target high-lift segments (Tuesday mornings, heavy users) and negotiate CPM from €0.05 → €0.03 to reach profitability. |
+- A/B test shows **+0.77 pp** conversion lift (**p < 0.001**)
+- However, campaign is **not profitable** at current ad cost
+- High-response segments identified: heavy users and early-week traffic
+- Recommended **NO-GO rollout** unless CPM is reduced
 
-> 💡 *This project demonstrates why **statistical significance ≠ business value** — a critical distinction for any data scientist advising stakeholders.*
+👉 This project demonstrates how to translate experiment results into real business decisions.
 
 ---
 
-## 📋 Analysis Pipeline
+## 🎯 Problem & Solution
+
+**Problem**  
+An ad campaign improved conversion, but the key decision was not just *"does it work?"*  
+It was: **"should we scale it?"**
+
+**Solution**  
+Built an end-to-end decision workflow:
+
+- Validated experiment integrity (SRM check)
+- Estimated treatment effect (two-proportion z-test)
+- Identified high-impact segments (heterogeneous treatment effects)
+- Evaluated unit economics (incremental revenue vs ad-serving cost)
+
+**Result**  
+Statistically significant effect, but economically unviable at current CPM → **NO-GO**.
+
+---
+
+## 📊 Key Results
+
+### Experiment Outcome
+
+- Conversion lift: **+0.77 pp** (p < 0.001)
+- Relative lift: **+43.1%**
+
+### Business Impact
+
+- Incremental revenue per user: **+€0.38**
+- Ad cost per user: **+€1.24**
+- **Net profit impact: negative at current CPM**
+
+👉 Conclusion: **Statistically significant ≠ profitable**
+
+---
+
+## 💡 Business Recommendation
+
+- ❌ Do not roll out campaign at current cost structure
+- ✅ Target high-impact segments (heavy users, Tue/Mon, morning windows)
+- 💰 Improve unit economics first (reduce CPM from **€0.05 → €0.03**)
+
+Focus on **incremental profit**, not conversion rate alone.
+
+---
+
+## 📋 Analysis Pipeline (Technical)
 
 ```
 Pre-launch Power Analysis → SRM Check → Primary z-Test
-    → Heterogeneous Treatment Effects → Novelty Effect Check
-        → Unit Economics & Go/No-Go Decision
+  → Heterogeneous Treatment Effects → Novelty Effect Check
+    → Unit Economics & Go/No-Go Decision
 ```
 
 | Step | What | Result |
@@ -39,29 +83,6 @@ Pre-launch Power Analysis → SRM Check → Primary z-Test
 | 4 | **Subgroup Analysis** | Lift concentrated in Tue/Mon (+1.6/+1.1 pp) and heavy-exposure users (Q4: +3.0 pp) |
 | 5 | **Novelty Check** | ✅ No decay — conversion *increases* with exposure (Spearman ρ = 0.19) |
 | 6 | **Unit Economics** | ⚠️ Incremental profit ≈ €0 — **NO-GO** at current CPM |
-
----
-
-## 📊 Key Results
-
-### Primary Test — Statistically Significant Lift
-
-| Metric | Control (PSA) | Treatment (Ad) | Difference |
-|:-------|:-------------:|:--------------:|:----------:|
-| **Conversion Rate** | 1.79% | 2.55% | **+0.77 pp** |
-| **95% CI** | [1.66%, 1.91%] | [2.50%, 2.60%] | — |
-| **P-value** | — | — | **< 0.0001** |
-| **Relative Lift** | — | — | +43.1% |
-
-### Economic Decision — NO-GO ⚠️
-
-| Metric | Control | Treatment | Delta |
-|:-------|:-------:|:---------:|:-----:|
-| Avg Revenue / user | €0.89 | €1.28 | +€0.38 |
-| Avg Ad Cost / user | €0.00 | €1.24 | +€1.24 |
-| **Net Profit / user** | **€0.89** | **€0.04** | **−€0.86** |
-
-> The +0.77 pp conversion lift generates only €0.38 incremental revenue per user, but costs €1.24 in ad serving. **The campaign destroys value.**
 
 ---
 
@@ -174,6 +195,6 @@ jupyter notebook "marketing ab test.ipynb"
 
 ## 👤 Author
 
-**Yingru Ma** · Economics Background · Targeting DS / PM Roles
+**Yingru Ma** · Data Analyst | Experimentation & Causal Inference
 
 [![GitHub](https://img.shields.io/badge/GitHub-yingruma1999--hub-181717?logo=github)](https://github.com/yingruma1999-hub)
